@@ -25,15 +25,14 @@ Treinar meu front-end e colocar no meu portifólio
 ## Parte Tecnica
 <details>
   <summary><strong>🛠️ Ferramentas Utilizadas</strong></summary><br />
-
   - [VsCode](https://code.visualstudio.com/) Editor de codigo fonte
   - [Vite](https://vitejs.dev/) Montar o projeto
 </details>
 
 <details>
   <summary><strong>🧰 Dependencias</strong></summary><br />
-  
   - Todas as dependencias estão dentro de ```dev-requirements.txt```
+  - [Bootstrap](https://getbootstrap.com/) Estilização
   - [Linter](https://eslint.org/) Linter 
   
 </details>

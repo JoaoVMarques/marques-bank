@@ -14,8 +14,10 @@ function LoginScreen() {
         <Col>
           <h1>Entrar</h1>
           <LoginForm />
-          <div className="separator">OU</div>
-          <Button variant="secondary" className="w-100">Criar uma conta</Button>
+          <div className='separator-box'>
+            <div className="separator">OU</div>
+          </div>
+          <Button variant="secondary" className="w-100">Criar conta</Button>
         </Col>
       </Row>
     </Container>

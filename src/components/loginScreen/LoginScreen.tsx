@@ -8,10 +8,10 @@ function LoginScreen() {
   return (
     <Container className='p-5'>
       <Row>
-        <Col>
+        <Col sm={8} md={true}>
           <img src={logo} alt="logo da empresa com nome Marques-Bank" />
         </Col>
-        <Col>
+        <Col sm={12} md={true}>
           <h1>Entrar</h1>
           <LoginForm />
           <div className='separator-box'>

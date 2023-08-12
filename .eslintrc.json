@@ -19,6 +19,7 @@
     "plugins": [
       "import",
       "@typescript-eslint"
+
     ],
     "rules": {
       "no-console": "off",

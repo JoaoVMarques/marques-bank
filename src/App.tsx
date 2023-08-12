@@ -4,9 +4,7 @@ import Login from './pages/loginScreen/LoginScreen.tsx';
 
 function App() {
   return (
-    <>
-      <Login />
-    </>
+    <Login />
   );
 }
 

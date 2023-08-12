@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from './imgs/logo.png';
 
 function App() {
   return (
     <>
-      <h1>Marques-bank</h1>
+      <img src={logo} alt="logo da empresa com nome Marques-Bank" />
     </>
   );
 }

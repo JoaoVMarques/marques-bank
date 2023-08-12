@@ -27,6 +27,7 @@ Treinar meu front-end e colocar no meu portifólio
   <summary><strong>🛠️ Ferramentas Utilizadas</strong></summary><br />
   - [VsCode](https://code.visualstudio.com/) Editor de codigo fonte
   - [Vite](https://vitejs.dev/) Montar o projeto
+  - [FreeLogo Design](https://pt.freelogodesign.org/) logos
 </details>
 
 <details>

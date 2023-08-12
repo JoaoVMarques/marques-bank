@@ -15,7 +15,7 @@ function LoginForm() {
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
       <Form.Check type="checkbox" label="Concordo com os termos de uso" required />
     </Form.Group>
-    <Button variant="primary" type="submit">
+    <Button variant="primary" className="w-100" type="submit">
       login
     </Button>
   </Form>

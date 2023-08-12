@@ -1,4 +1,6 @@
-import { Col, Container, Row } from 'react-bootstrap';
+import {
+  Col, Container, Row, Button,
+} from 'react-bootstrap';
 import logo from '../../imgs/logo.png';
 import LoginForm from './Forms/LoginForm.tsx';
 
@@ -12,6 +14,8 @@ function LoginScreen() {
         <Col>
           <h1>Entrar</h1>
           <LoginForm />
+          <div className="separator">OU</div>
+          <Button variant="secondary" className="w-100">Criar uma conta</Button>
         </Col>
       </Row>
     </Container>

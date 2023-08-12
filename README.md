@@ -33,7 +33,7 @@ Treinar meu front-end e colocar no meu portifólio
 <details>
   <summary><strong>🧰 Dependencias</strong></summary><br />
   - Todas as dependencias estão dentro de ```dev-requirements.txt```
-  - [Bootstrap](https://getbootstrap.com/) Estilização
+  - [React Bootstrap](https://react-bootstrap.netlify.app/) Estilização
   - [Linter](https://eslint.org/) Linter 
   
 </details>

@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './imgs/logo.png';
+import Login from './components/login/Login.tsx';
 
 function App() {
   return (
     <>
-      <img src={logo} alt="logo da empresa com nome Marques-Bank" />
+      <Login />
     </>
   );
 }

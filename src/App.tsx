@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/login/Login.tsx';
+import Login from './components/loginScreen/LoginScreen.tsx';
 
 function App() {
   return (

@@ -10,7 +10,7 @@ function LoginScreen() {
     <Container className='p-5'>
       <Row className="justify-content-md-center">
         <Col sm={8} md={true}>
-          <img className="rounded mx-auto d-block" src={logo} alt='logo da empresa com nome Marques-Bank' />
+          <img className="rounded mx-auto d-block" src={logo} alt='logo da empresa Marques-Bank' />
           <Slogan />
         </Col>
         <Col sm={12} md={true}>

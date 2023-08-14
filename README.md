@@ -35,5 +35,6 @@ Treinar meu front-end e colocar no meu portifólio
   - Todas as dependencias estão dentro de ```dev-requirements.txt```
   - [React Bootstrap](https://react-bootstrap.netlify.app/) Estilização
   - [Linter](https://eslint.org/) Linter 
+  - [React Router](https://reactrouter.com/en/main) Rotas
   
 </details>

@@ -1,3 +1,19 @@
+.background {
+  background-color: #EDEEFF;
+}
+
+.background-white {
+  background-color: white;
+}
+
+.container-rounded {
+  border-radius: 24px;
+}
+
+.color-purple {
+  color: #6E63ED;
+}
+
 .separator-box {
   display: flex;
   justify-content: center;

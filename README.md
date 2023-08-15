@@ -37,5 +37,6 @@ Treinar meu front-end e colocar no meu portifólio
   - [Linter](https://eslint.org/) Linter 
   - [React Router](https://reactrouter.com/en/main) Rotas
   - [Formik](https://formik.org/) Validar formulários
+  - [Yup](https://www.npmjs.com/package/yup) schema da validação de formulário
   
 </details>

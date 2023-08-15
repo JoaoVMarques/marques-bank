@@ -1,10 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import Login from './pages/loginScreen/LoginScreen.tsx';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './routes/Router.tsx';
 
 function App() {
   return (
-    <Login />
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
 

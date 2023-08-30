@@ -11,10 +11,10 @@ function LoginScreen() {
       <Row className="justify-content-md-center">
         <Col sm={8} md={true}>
           <img className="rounded mx-auto d-block" src={logo} alt='logo da empresa Marques-Bank' />
-          <h3 className='text-center mb-5 text-primary'>Marques-Bank</h3>
+          <h3 className='text-center mb-4 text-primary'>Marques-Bank</h3>
           <Slogan />
         </Col>
-        <Col sm={12} md={true} className='p-5 background-white container-rounded'>
+        <Col sm={12} md={true} className='p-4 background-white container-rounded'>
           <h1>Entrar</h1>
           <LoginForm />
           <div className='separator-box'>

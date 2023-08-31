@@ -34,7 +34,7 @@ Treinar meu front-end e colocar no meu portifólio
   <summary><strong>🧰 Dependencias</strong></summary><br />
   - Todas as dependencias estão dentro de ```dev-requirements.txt```
   - [React Bootstrap](https://react-bootstrap.netlify.app/) Estilização
-  - [Jest](https://jestjs.io/) Testes
+  - [Vitest](https://vitest.dev/) Testes
   - [Linter](https://eslint.org/) Linter 
   - [React Router](https://reactrouter.com/en/main) Rotas
   - [Formik](https://formik.org/) Validar formulários

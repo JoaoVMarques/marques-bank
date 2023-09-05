@@ -3,13 +3,13 @@ import logo from '../../../imgs/logo.png';
 
 function NavbarLogo() {
   return (
-    <Container>
+    <Container className='me-lg-5 me-sm-1'>
       <Row>
         <Col className='p-0'>
-          <img alt="logo marques-bank" src={logo} className="d-inline-block" />
+          <img alt="logo marques-bank" src={logo} className="d-inline-block pb-2" />
         </Col>
         <Col className='p-0 align-self-center'>
-          <h3 className='mt-3'>Marques</h3>
+          <h4 className='mb-0'>Marques</h4>
         </Col>
       </Row>
     </Container>

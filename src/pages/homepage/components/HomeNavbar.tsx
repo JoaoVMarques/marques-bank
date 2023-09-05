@@ -1,24 +1,12 @@
-import {
-  Col, Row,
-  Navbar, Container,
-} from 'react-bootstrap';
-import logo from '../../../imgs/logo.png';
+import { Navbar, Container } from 'react-bootstrap';
+import NavbarLogo from './NavbarLogo.tsx';
 
 function HomeNavbar() {
   return (
-  <Navbar className='pb-0'>
+  <Navbar expand="lg" className='pb-0'>
     <Container>
       <Navbar.Brand href="#" className='align-items-center'>
-        <Container>
-          <Row>
-            <Col className='p-0'>
-              <img alt="logo marques-bank" src={logo} className="d-inline-block" />
-            </Col>
-            <Col className='p-0 align-self-center'>
-              <h3 className='mt-3'>Marques</h3>
-            </Col>
-          </Row>
-        </Container>
+        <NavbarLogo />
       </Navbar.Brand>
     </Container>
   </Navbar>

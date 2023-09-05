@@ -4,6 +4,7 @@ function HomePage() {
   return (
     <>
       <HomeNavbar />
+      <hr className='navbarLine' />
     </>
   );
 }

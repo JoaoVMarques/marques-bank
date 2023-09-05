@@ -2,6 +2,11 @@
   background-color: #EDEEFF;
 }
 
+.navbarLine {
+  width: 90%; 
+  margin: auto;
+}
+
 .test {
   vertical-align: middle;
 }

@@ -6,7 +6,7 @@ import logo from '../../../imgs/logo.png';
 
 function HomeNavbar() {
   return (
-  <Navbar>
+  <Navbar className='pb-0'>
     <Container>
       <Navbar.Brand href="#" className='align-items-center'>
         <Container>

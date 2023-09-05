@@ -5,6 +5,8 @@ import userEvent from '@testing-library/user-event'
 import React from 'react';
 import App from '../../src/App';
 
+const HomePageText = 'Marques'
+
 describe('Login screen', () => {  
   beforeEach(() => {
     window.history.pushState({}, '', '/');
@@ -29,7 +31,7 @@ describe('Login screen', () => {
     await userEvent.click(termsButton);
     await userEvent.click(loginButton);
 
-    const homePage = await screen.findByText(/homepage/i);
+    const homePage = await screen.findByText(HomePageText);
     expect(homePage).toBeInTheDocument();
   })
 
@@ -73,7 +75,6 @@ describe('Login screen', () => {
     const screen = render(<App />);
     const emailForm = screen.getByLabelText(/endereço de email/i);
     const passwordForm = screen.getByLabelText(/senha/i);
-    const termsButton = screen.getByLabelText(/concordo com os termos de uso/i);
     const loginButton = screen.getByRole('button', {
       name: /login/i
   })
@@ -82,7 +83,7 @@ describe('Login screen', () => {
     await userEvent.type(passwordForm, 'password');
     await userEvent.click(loginButton);
 
-    const homePage = screen.queryByText(/homepage/i);
+    const homePage = screen.queryByText(HomePageText);
     expect(homePage).toBeNull();
   })
 });

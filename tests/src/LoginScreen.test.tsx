@@ -7,10 +7,25 @@ import App from '../../src/App';
 
 const HomePageText = 'Marques'
 
-describe('Login screen', () => {  
+describe('Login screen', () => {
   beforeEach(() => {
     window.history.pushState({}, '', '/');
+
+    Object.defineProperty(window, 'matchMedia', {
+      writable: true,
+      value: vi.fn().mockImplementation((query) => ({
+          matches: false,
+          media: query,
+          onchange: null,
+          addListener: vi.fn(), // Deprecated
+          removeListener: vi.fn(), // Deprecated
+          addEventListener: vi.fn(),
+          removeEventListener: vi.fn(),
+          dispatchEvent: vi.fn(),
+      })),
+    });
   });
+  
 
   test('Should be able to see the website name on the screen', () => {
     const { getByText } = render(<App />);
@@ -31,7 +46,9 @@ describe('Login screen', () => {
     await userEvent.click(termsButton);
     await userEvent.click(loginButton);
 
-    const homePage = await screen.findByText(HomePageText);
+    const homePage = await screen.findByRole('heading', {
+      name: HomePageText
+    })
     expect(homePage).toBeInTheDocument();
   })
 

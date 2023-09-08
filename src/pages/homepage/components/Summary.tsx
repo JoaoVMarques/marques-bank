@@ -1,17 +1,15 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import walletIcon from '../../../imgs/svgs/wallet.svg';
+import SummaryPanel from './SummaryPanel.tsx';
 
 function Summary() {
   return (
     <Container>
       <Row>
-        <h5>Sumário</h5>
+        <h5 className='mb-3' >Sumário</h5>
       </Row>
       <Row>
         <Col>
-        <img width={30} src={walletIcon} alt="icone dinheiro" />
-        <span>Saldo disponivel</span>
-        <span>R$ 1000</span>
+          <SummaryPanel />
         </Col>
       </Row>
     </Container>

@@ -6,7 +6,7 @@ function Router() {
   return (
     <Routes>
       <Route path='/' element={ <Login /> } />
-      <Route path='/home' element={ <HomePage /> } />
+      <Route path='/marques/' element={ <HomePage /> } />
     </Routes>
   );
 }

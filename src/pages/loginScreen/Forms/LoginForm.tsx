@@ -22,7 +22,7 @@ function LoginForm() {
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={() => {
-        navigate('home');
+        navigate('marques');
       }
       }
       validateOnChange={false}

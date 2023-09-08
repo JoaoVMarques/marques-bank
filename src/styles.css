@@ -2,6 +2,10 @@
   background-color: #EDEEFF;
 }
 
+.panelBorder {
+  border:1px solid black;
+}
+
 .navbarLine {
   width: 90%; 
   margin: auto;

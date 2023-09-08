@@ -1,5 +1,5 @@
 import HomeNavbar from './components/HomeNavbar.tsx';
-import Summary from './components/Summary.tsx';
+import Summary from './components/summary/Summary.tsx';
 
 function HomePage() {
   return (

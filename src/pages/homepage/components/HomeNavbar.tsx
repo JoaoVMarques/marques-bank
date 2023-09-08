@@ -5,18 +5,18 @@ import NavbarLogo from './NavbarLogo.tsx';
 
 function HomeNavbar() {
   return (
-  <Navbar expand="lg" className='pb-0'>
+  <Navbar expand="sm" className='pb-0'>
     <Container>
       <Navbar.Brand href="#">
         <NavbarLogo />
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls={'offcanvasNavbar-expand-lg'} />
+      <Navbar.Toggle aria-controls={'offcanvasNavbar-expand-sm'} />
       <Navbar.Offcanvas
         id={'offcanvasNavbar-expand-lg'}
-        aria-labelledby={'offcanvasNavbarLabel-expand-lg'}
+        aria-labelledby={'offcanvasNavbarLabel-expand-sm'}
         placement="end">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title id={'offcanvasNavbarLabel-expand-lg'}>
+          <Offcanvas.Title id={'offcanvasNavbarLabel-expand-sm'}>
             Offcanvas
           </Offcanvas.Title>
         </Offcanvas.Header>

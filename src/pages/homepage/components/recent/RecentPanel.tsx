@@ -1,6 +1,19 @@
 import {
   Col, Container, Row, Table,
 } from 'react-bootstrap';
+import recentUser1 from './recent.data.ts';
+import { IRecent } from '../../interfaces/recentData.ts';
+
+function createTable(user : IRecent) {
+  return (
+  <tr>
+    <td>{user.Date}</td>
+    <td>{user.User}</td>
+    <td>{user.Type}</td>
+    <td>{user.Quantity}</td>
+    <td>{user.Status}</td>
+  </tr>);
+}
 
 function RecentPanel() {
   return (
@@ -22,20 +35,7 @@ function RecentPanel() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>10/04/2023, 17:44</td>
-              <td>Usuario1722</td>
-              <td>pix</td>
-              <td>+100</td>
-              <td>Completo</td>
-            </tr>
-            <tr>
-              <td>10/04/2023, 17:44</td>
-              <td>Daniel sobrenome</td>
-              <td>transferencia</td>
-              <td>+100</td>
-              <td>Completo</td>
-            </tr>
+            { recentUser1.map((user) => createTable(user)) }
           </tbody>
         </Table>
       </Row>

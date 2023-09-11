@@ -1,5 +1,5 @@
 import HomeNavbar from './components/HomeNavbar.tsx';
-import RecentPanel from './components/RecentPanel.tsx';
+import RecentPanel from './components/recent/RecentPanel.tsx';
 import Summary from './components/summary/Summary.tsx';
 
 function HomePage() {

@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import SummaryPanel from './SummaryPanel.tsx';
-import { placeholder, totalMoney, deposit } from './panels.ts';
+import { totalMoney, deposit, withdrawn } from './panels.ts';
 
 function Summary() {
   return (
@@ -16,7 +16,7 @@ function Summary() {
           <SummaryPanel panel={deposit} />
         </Col>
         <Col>
-          <SummaryPanel panel={placeholder} />
+          <SummaryPanel panel={withdrawn} />
         </Col>
       </Row>
     </Container>

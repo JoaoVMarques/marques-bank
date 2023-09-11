@@ -2,12 +2,13 @@
 import { IPanel } from '../../interfaces/summaryInterfaces.ts';
 import wallet from '../../../../imgs/svgs/wallet.svg';
 import coin from '../../../../imgs/svgs/coin.svg';
-import arrowDown from '../../../../imgs/svgs/down-arrow.svg';
+import arrowDown from '../../../../imgs/svgs/arrow-down.svg';
+import arrowUp from '../../../../imgs/svgs/arrow-up.svg';
 
 export const totalMoney: IPanel = {
   icon: {
     src: wallet,
-    size: 35,
+    size: 30,
     alt: 'icone de carteira de dinheiro',
   },
   title: 'Saldo disponível',
@@ -17,17 +18,27 @@ export const totalMoney: IPanel = {
 export const deposit: IPanel = {
   icon: {
     src: arrowDown,
-    size: 35,
+    size: 30,
     alt: 'seta para baixo',
   },
   title: 'Dinheiro depositado',
   value: 500,
 };
 
+export const withdrawn: IPanel = {
+  icon: {
+    src: arrowUp,
+    size: 30,
+    alt: 'seta para cima',
+  },
+  title: 'Dinheiro retirado',
+  value: 200,
+};
+
 export const placeholder: IPanel = {
   icon: {
     src: coin,
-    size: 35,
+    size: 30,
     alt: 'icone de moeda',
   },
   title: 'Placeholder',

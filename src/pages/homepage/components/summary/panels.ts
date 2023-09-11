@@ -1,9 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import { IPanel } from '../../interfaces/summaryInterfaces.ts';
 import wallet from '../../../../imgs/svgs/wallet.svg';
-import coin from '../../../../imgs/svgs/coin.svg';
 import arrowDown from '../../../../imgs/svgs/arrow-down.svg';
 import arrowUp from '../../../../imgs/svgs/arrow-up.svg';
+import piggyBank from '../../../../imgs/svgs/piggy-bank.svg';
 
 export const totalMoney: IPanel = {
   icon: {
@@ -35,12 +35,12 @@ export const withdrawn: IPanel = {
   value: 200,
 };
 
-export const placeholder: IPanel = {
+export const earnedMoney: IPanel = {
   icon: {
-    src: coin,
+    src: piggyBank,
     size: 30,
-    alt: 'icone de moeda',
+    alt: 'cofrinho de dinheiro em formato de porquinho',
   },
-  title: 'Placeholder',
-  value: 0,
+  title: 'Rendimentos obtidos',
+  value: 50,
 };

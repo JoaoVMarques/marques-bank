@@ -11,15 +11,32 @@ function RecentPanel() {
         </Col>
       </Row>
       <Row>
-        <Table>
+        <Table className='panelBorder'>
           <thead>
             <tr>
               <th>Data</th>
+              <th>Para</th>
               <th>Tipo</th>
               <th>Quantidade</th>
               <th>Status</th>
             </tr>
           </thead>
+          <tbody>
+            <tr>
+              <td>10/04/2023, 17:44</td>
+              <td>Usuario1722</td>
+              <td>pix</td>
+              <td>+100</td>
+              <td>Completo</td>
+            </tr>
+            <tr>
+              <td>10/04/2023, 17:44</td>
+              <td>Daniel sobrenome</td>
+              <td>transferencia</td>
+              <td>+100</td>
+              <td>Completo</td>
+            </tr>
+          </tbody>
         </Table>
       </Row>
     </Container>

@@ -5,6 +5,8 @@ import arrowDown from '../../../../imgs/svgs/arrow-down.svg';
 import arrowUp from '../../../../imgs/svgs/arrow-up.svg';
 import piggyBank from '../../../../imgs/svgs/piggy-bank.svg';
 
+// Depois é preciso deixar dinamico a parte dos valores.
+
 export const totalMoney: IPanel = {
   icon: {
     src: wallet,

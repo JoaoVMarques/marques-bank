@@ -1,7 +1,7 @@
 import {
   Col, Container, Row, Table,
 } from 'react-bootstrap';
-import recentUser1 from './recent.data.ts';
+import recentUser1 from './recentData.ts';
 import { IRecent } from '../../interfaces/recentData.ts';
 
 function createTable(user : IRecent) {

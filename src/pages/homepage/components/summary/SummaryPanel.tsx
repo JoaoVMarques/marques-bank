@@ -5,8 +5,8 @@ function SummaryPanel(props: { panel: IPanel }) {
   const { panel } = props;
   const { icon } = panel;
   return (
-    <Col>
-      <Container className='panelBorder p-3 rounded'>
+    <Col lg={6} xl={3}>
+      <Container className='panelBorder p-3 rounded bg-light mb-2'>
         <Row>
           <Col>
             <img className='mb-2 me-2' width={icon.size} src={icon.src} alt={icon.alt} />

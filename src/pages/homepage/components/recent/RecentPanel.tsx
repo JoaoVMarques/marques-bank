@@ -24,7 +24,7 @@ function RecentPanel() {
         </Col>
       </Row>
       <Row>
-        <Table className='panelBorder'>
+        <Table className='panelBorder' responsive>
           <thead>
             <tr>
               <th>Data</th>

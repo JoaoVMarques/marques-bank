@@ -2,6 +2,7 @@ import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
+import validateLogin from './accounts.ts';
 
 const schema = yup.object().shape({
   email: yup.string().required(),
@@ -21,8 +22,10 @@ function LoginForm() {
     <Formik
       validationSchema={schema}
       initialValues={initialValues}
-      onSubmit={() => {
-        navigate('marques');
+      onSubmit={(account) => {
+        if (validateLogin(account)) {
+          navigate('marques');
+        }
       }
       }
       validateOnChange={false}

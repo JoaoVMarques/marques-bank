@@ -6,12 +6,12 @@ import { IRecent } from '../../interfaces/recentData.ts';
 
 function createTable(user : IRecent) {
   return (
-  <tr>
-    <td>{user.Date}</td>
-    <td>{user.User}</td>
-    <td>{user.Type}</td>
-    <td>{user.Quantity}</td>
-    <td>{user.Status}</td>
+  <tr key={user.id}>
+    <td>{user.date}</td>
+    <td>{user.user}</td>
+    <td>{user.type}</td>
+    <td>{user.quantity}</td>
+    <td>{user.status}</td>
   </tr>);
 }
 

@@ -1,7 +1,8 @@
 export interface IRecent {
-  Date: string
-  User: string
-  Type: string
-  Quantity: number
-  Status: string
+  id: number,
+  date: string
+  user: string
+  type: string
+  quantity: number
+  status: string
 }

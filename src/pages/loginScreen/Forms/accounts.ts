@@ -3,7 +3,7 @@
 import { IAccount } from '../interfaces/account.ts';
 
 const defaultAccount: IAccount = {
-  email: 'test@email.com',
+  email: 'teste@email.com',
   password: '1234',
 };
 
@@ -18,9 +18,10 @@ function searchAccount(credentials: IAccount, localStorageAccount: string) {
 }
 
 export default function validateLogin(account: IAccount) {
-  const accounts = localStorage.getItem('accounts');
+  let accounts = localStorage.getItem('accounts');
   if (!accounts) {
     localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
+    accounts = localStorage.getItem('accounts');
   }
   return searchAccount(account, accounts!);
 }

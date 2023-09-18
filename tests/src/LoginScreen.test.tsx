@@ -6,6 +6,10 @@ import React from 'react';
 import App from '../../src/App';
 
 const HomePageText = 'Marques'
+const account = {
+  email: 'teste@email.com',
+  password: '1234'
+}
 
 describe('Login screen', () => {
   beforeEach(() => {
@@ -41,8 +45,8 @@ describe('Login screen', () => {
       name: /login/i
   })
 
-    await userEvent.type(emailForm, 'email@email.com');
-    await userEvent.type(passwordForm, 'password');
+    await userEvent.type(emailForm, account.email);
+    await userEvent.type(passwordForm, account.password);
     await userEvent.click(termsButton);
     await userEvent.click(loginButton);
 
@@ -78,7 +82,7 @@ describe('Login screen', () => {
       name: /login/i
     })
 
-    await userEvent.type(emailForm, 'email@email.com  ');
+    await userEvent.type(emailForm, account.email);
     await userEvent.click(termsButton);
     await userEvent.click(loginButton);
 
@@ -96,8 +100,8 @@ describe('Login screen', () => {
       name: /login/i
   })
 
-    await userEvent.type(emailForm, 'email@email.com');
-    await userEvent.type(passwordForm, 'password');
+    await userEvent.type(emailForm, account.email);
+    await userEvent.type(passwordForm, account.password);
     await userEvent.click(loginButton);
 
     const homePage = screen.queryByText(HomePageText);

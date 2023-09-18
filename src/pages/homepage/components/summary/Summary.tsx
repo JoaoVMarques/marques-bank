@@ -10,7 +10,7 @@ function Summary() {
       <Row>
         <h5 className='mb-3'>Sumário</h5>
       </Row>
-      <Row clas>
+      <Row>
         <SummaryPanel panel={totalMoney} />
         <SummaryPanel panel={deposit} />
         <SummaryPanel panel={withdrawn} />

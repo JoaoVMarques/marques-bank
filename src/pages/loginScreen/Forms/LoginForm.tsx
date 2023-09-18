@@ -28,11 +28,18 @@ function LoginForm() {
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={(account, { resetForm }) => {
+        console.log('teste');
         if (validateLogin(account)) {
           navigate('marques');
         } else {
           setShow(true);
-          resetForm();
+          resetForm({
+            values: {
+              email: account.email,
+              password: '',
+              terms: true,
+            },
+          });
         }
       }
       }

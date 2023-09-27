@@ -1,18 +1,23 @@
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { describe, expect, test, vi } from 'vitest';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event'
 import React from 'react';
 import App from '../../src/App';
+import testAccount from '../mock/accountsMock';
 
 const HomePageText = 'Marques'
 const account = {
-  email: 'teste@email.com',
+  email: 'correctEmail@email.com',
   password: '1234'
 }
 
+
+
 describe('Login screen', () => {
   beforeEach(() => {
+    localStorage.clear();
+    localStorage.setItem('accounts', JSON.stringify([testAccount]));
     window.history.pushState({}, '', '/');
 
     Object.defineProperty(window, 'matchMedia', {

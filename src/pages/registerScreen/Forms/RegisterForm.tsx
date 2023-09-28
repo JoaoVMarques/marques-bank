@@ -1,8 +1,9 @@
 import { Formik } from 'formik';
-import { Form, Button, InputGroup } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 
 const schema = yup.object().shape({
+  username: yup.string().required(),
   email: yup.string().required(),
   password: yup.string().required(),
   terms: yup.bool().required().oneOf([true], 'É preciso aceitar os termos.'),
@@ -10,6 +11,7 @@ const schema = yup.object().shape({
 
 function RegisterForm() {
   const initialValues = {
+    username: '',
     email: '',
     password: '',
     terms: false,
@@ -29,19 +31,16 @@ function RegisterForm() {
       }) => (
         <>
           <Form className='mt-4' onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formEmail">
+            <Form.Group className="mb-3" controlId="username">
               <Form.Label>Nome de usuario</Form.Label>
-              <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                <Form.Control
-                  name='username'
-                  placeholder="Nome De usuário"
-                  value={values.email}
-                  onChange={handleChange}
-                  isInvalid={!!errors.email} />
-              </InputGroup>
+              <Form.Control
+                name='username'
+                placeholder="Nome De usuário"
+                value={values.username}
+                onChange={handleChange}
+                isInvalid={!!errors.username} />
               <Form.Control.Feedback type="invalid">
-                {errors.email}
+                {errors.username}
               </Form.Control.Feedback>
             </Form.Group>
 

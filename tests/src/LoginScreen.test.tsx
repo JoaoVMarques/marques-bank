@@ -47,7 +47,6 @@ describe('Login screen', () => {
     const screen = render(<App />);
     const emailForm = screen.getByLabelText(/endereço de email/i);
     const passwordForm = screen.getByLabelText(/senha/i);
-    const termsButton = screen.getByLabelText(/concordo com os termos de uso/i);
     const loginButton = screen.getByRole('button', {
       name: /login/i
     })
@@ -70,7 +69,6 @@ describe('Login screen', () => {
 
     const wrongEmail = 'incorrectEmail@email.com'
     const wrongPassword = '123a'
-    await userEvent.click(termsButton);
     
     await testCredentials(wrongEmail, wrongPassword);
     await testCredentials(account.email, wrongPassword);
@@ -88,13 +86,11 @@ describe('Login screen', () => {
   test('Not should be able to login without valid email', async () => {
     const screen = render(<App />);
     const passwordForm = screen.getByLabelText(/senha/i);
-    const termsButton = screen.getByLabelText(/concordo com os termos de uso/i);
     const loginButton = screen.getByRole('button', {
       name: /login/i
     })
 
     await userEvent.type(passwordForm, 'password');
-    await userEvent.click(termsButton);
     await userEvent.click(loginButton);
 
     const invalidEmail = await screen.findByText(/email is a required field/i)
@@ -106,34 +102,16 @@ describe('Login screen', () => {
   test('Not should be able to login without valid password', async () => {
     const screen = render(<App />);
     const emailForm = screen.getByLabelText(/endereço de email/i);
-    const termsButton = screen.getByLabelText(/concordo com os termos de uso/i);
     const loginButton = screen.getByRole('button', {
       name: /login/i
     })
 
     await userEvent.type(emailForm, account.email);
-    await userEvent.click(termsButton);
     await userEvent.click(loginButton);
 
     const invalidPassword = await screen.findByText(/password is a required field/i)
     const invalidEmail = screen.queryByText(/email is a required field/i)
     expect(invalidPassword).toBeInTheDocument();
     expect(invalidEmail).toBeNull();
-  })
-
-  test('Not should be able to go to home page without confirm the terms button', async () => {
-    const screen = render(<App />);
-    const emailForm = screen.getByLabelText(/endereço de email/i);
-    const passwordForm = screen.getByLabelText(/senha/i);
-    const loginButton = screen.getByRole('button', {
-      name: /login/i
-  })
-
-    await userEvent.type(emailForm, account.email);
-    await userEvent.type(passwordForm, account.password);
-    await userEvent.click(loginButton);
-
-    const homePage = screen.queryByText(HomePageText);
-    expect(homePage).toBeNull();
   })
 });

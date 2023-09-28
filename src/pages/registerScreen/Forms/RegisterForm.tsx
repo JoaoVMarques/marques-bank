@@ -1,42 +1,25 @@
 import { Formik } from 'formik';
-import { Form, Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Form, Button, InputGroup } from 'react-bootstrap';
 import * as yup from 'yup';
-import { useState } from 'react';
-import validateLogin from './accounts.ts';
-import PasswordModal from './PasswordModal.tsx';
 
 const schema = yup.object().shape({
   email: yup.string().required(),
   password: yup.string().required(),
+  terms: yup.bool().required().oneOf([true], 'É preciso aceitar os termos.'),
 });
 
-function LoginForm() {
-  const [show, setShow] = useState(false);
-  const navigate = useNavigate();
+function RegisterForm() {
   const initialValues = {
     email: '',
     password: '',
+    terms: false,
   };
-
-  const handleClose = () => setShow(false);
-
   return (
     <Formik
       validationSchema={schema}
       initialValues={initialValues}
-      onSubmit={(account, { resetForm }) => {
-        if (validateLogin(account)) {
-          navigate('marques');
-        } else {
-          setShow(true);
-          resetForm({
-            values: {
-              email: account.email,
-              password: '',
-            },
-          });
-        }
+      onSubmit={() => {
+        console.log('conta criada');
       }
       }
       validateOnChange={false}
@@ -45,8 +28,23 @@ function LoginForm() {
         handleSubmit, handleChange, values, errors,
       }) => (
         <>
-          <PasswordModal show={show} handleClose={handleClose} />
           <Form className='mt-4' onSubmit={handleSubmit}>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Nome de usuario</Form.Label>
+              <InputGroup className="mb-3">
+                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                <Form.Control
+                  name='username'
+                  placeholder="Nome De usuário"
+                  value={values.email}
+                  onChange={handleChange}
+                  isInvalid={!!errors.email} />
+              </InputGroup>
+              <Form.Control.Feedback type="invalid">
+                {errors.email}
+              </Form.Control.Feedback>
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Endereço de email</Form.Label>
               <Form.Control
@@ -74,6 +72,15 @@ function LoginForm() {
                 {errors.password}
               </Form.Control.Feedback>
             </Form.Group>
+            <Form.Group className="mb-3" controlId="formCheckbox">
+              <Form.Check
+                required
+                type='checkbox'
+                name='terms'
+                label='Concordo com os termos de uso'
+                onChange={handleChange}
+                feedback={errors.terms} />
+            </Form.Group>
             <Button variant="primary" className="w-100" type="submit">
               login
             </Button>
@@ -84,4 +91,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default RegisterForm;

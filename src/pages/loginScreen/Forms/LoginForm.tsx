@@ -28,7 +28,6 @@ function LoginForm() {
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={(account, { resetForm }) => {
-        console.log('teste');
         if (validateLogin(account)) {
           navigate('marques');
         } else {

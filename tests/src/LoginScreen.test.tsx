@@ -12,12 +12,14 @@ const account = {
   password: '1234'
 }
 
-
+const mockLocalStorage = () => {
+  localStorage.clear();
+  localStorage.setItem('accounts', JSON.stringify([testAccount]));
+}
 
 describe('Login screen', () => {
   beforeEach(() => {
-    localStorage.clear();
-    localStorage.setItem('accounts', JSON.stringify([testAccount]));
+    mockLocalStorage();
     window.history.pushState({}, '', '/');
 
     Object.defineProperty(window, 'matchMedia', {
@@ -41,20 +43,42 @@ describe('Login screen', () => {
     expect(getByText('Marques-Bank')).toBeInTheDocument();
   });
 
-  test('Should be able to login and go to home page', async () => {
+  test('Should be able to login and go to home page only with valid password and email', async () => {
     const screen = render(<App />);
     const emailForm = screen.getByLabelText(/endereço de email/i);
     const passwordForm = screen.getByLabelText(/senha/i);
     const termsButton = screen.getByLabelText(/concordo com os termos de uso/i);
     const loginButton = screen.getByRole('button', {
       name: /login/i
-  })
+    })
 
-    await userEvent.type(emailForm, account.email);
-    await userEvent.type(passwordForm, account.password);
+    const testCredentials = async (email: String, password: String) => {
+      await userEvent.type(emailForm, 'incorrectEmail@email.com');
+      await userEvent.type(passwordForm, '123a');
+      await userEvent.click(loginButton);
+      
+      const wrongCredentials = await screen.findByText(/email ou senha incorreto/i)
+      expect(wrongCredentials).toBeInTheDocument();
+      const closeButton = screen.getByRole('button', {
+        name: /close/i
+      })
+      await userEvent.click(closeButton)
+
+      await userEvent.clear(emailForm);
+      await userEvent.clear(passwordForm);
+  }
+
+    const wrongEmail = 'incorrectEmail@email.com'
+    const wrongPassword = '123a'
     await userEvent.click(termsButton);
-    await userEvent.click(loginButton);
+    
+    await testCredentials(wrongEmail, wrongPassword);
+    await testCredentials(account.email, wrongPassword);
+    
+    await userEvent.type(emailForm, account.email);
+    await userEvent.type(passwordForm, account.password)
 
+    await userEvent.click(loginButton);
     const homePage = await screen.findByRole('heading', {
       name: HomePageText
     })

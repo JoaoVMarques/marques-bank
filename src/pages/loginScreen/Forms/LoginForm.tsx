@@ -27,7 +27,7 @@ function LoginForm() {
       initialValues={initialValues}
       onSubmit={(account, { resetForm }) => {
         if (validateLogin(account)) {
-          navigate('marques');
+          navigate('/marques');
         } else {
           setShow(true);
           resetForm({

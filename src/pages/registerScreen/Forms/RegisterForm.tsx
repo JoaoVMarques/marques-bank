@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 import validateRegister from './validateRegister.ts';
 import { insertAccount, formatAccount } from '../../../localstorage/createAccount.ts';
 
@@ -12,6 +13,7 @@ const schema = yup.object().shape({
 });
 
 function RegisterForm() {
+  const navigate = useNavigate();
   const initialValues = {
     username: '',
     email: '',
@@ -26,6 +28,7 @@ function RegisterForm() {
         const validAccount = validateRegister(account);
         if (validAccount) {
           const formatedAccount = formatAccount(account);
+          navigate('/marques');
           insertAccount(formatedAccount);
           return;
         }

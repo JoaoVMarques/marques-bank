@@ -2,8 +2,8 @@ import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import validateRegister from './validateRegister.ts';
 import { insertAccount, formatAccount } from '../../../localstorage/createAccount.ts';
+import validateRegister from '../../../localstorage/validateRegister.ts';
 
 const schema = yup.object().shape({
   username: yup.string().required(),

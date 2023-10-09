@@ -1,6 +1,6 @@
 // A parte de encontrar a conta deveria ser feito no back-end
 // porém por ser um projeto de testes e não vai ser utilizado back-end no momento
-import { IAccount } from '../interfaces/account.ts';
+import { IAccount } from './interfaces/account.ts';
 
 const defaultAccount: IAccount = {
   email: 'teste@email.com',

@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 import { useState } from 'react';
-import validateLogin from './accounts.ts';
+import validateLogin from '../../../localstorage/loginAccount.ts';
 import PasswordModal from './PasswordModal.tsx';
 
 const schema = yup.object().shape({

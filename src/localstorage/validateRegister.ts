@@ -1,5 +1,4 @@
-import { IAccount } from '../../loginScreen/interfaces/account.ts';
-import { IRegisterAcount } from '../interfaces/account.ts';
+import { IRegisterAcount, IAccount } from './interfaces/account.ts';
 
 function verifyEmailExist(accountEmail: string) {
   const localstorageAccount = localStorage.getItem('accounts');

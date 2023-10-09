@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
+import validateRegister from './validateRegister.ts';
 
 const schema = yup.object().shape({
   username: yup.string().required(),
@@ -20,10 +21,15 @@ function RegisterForm() {
     <Formik
       validationSchema={schema}
       initialValues={initialValues}
-      onSubmit={() => {
-        console.log('conta criada');
-      }
-      }
+      onSubmit={(account) => {
+        // verificar conta
+        const validAccount = validateRegister(account);
+        if (validAccount) {
+          console.log('conta criada');
+          return;
+        }
+        console.log('invalido');
+      }}
       validateOnChange={false}
     >
       {({

@@ -3,12 +3,13 @@ export interface IAccount {
   password: string,
 }
 
-// TODO: fazer o mock com o teste
-// e criar um teste não funcionando entrar com uma conta não existente
-
-const testAccount: IAccount = {
+export const testAccount: IAccount = {
   email: 'correctEmail@email.com',
   password: '1234',
 };
 
-export default testAccount
+export const VALID_ACCOUNT = {
+  username: 'usernameTest',
+  password: 'passwordT',
+  email: 'emailTest@email.com'
+}

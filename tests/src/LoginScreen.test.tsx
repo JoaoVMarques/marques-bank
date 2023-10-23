@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event'
 import React from 'react';
 import App from '../../src/App';
-import testAccount from '../mock/accountsMock';
+import { testAccount } from '../mock/accountsMock';
 
 const HomePageText = 'Marques'
 const account = {

@@ -14,5 +14,4 @@ export function insertAccount(account: IAccount) {
   const parseAccounts = JSON.parse(accounts);
   parseAccounts.push(account);
   localStorage.setItem('accounts', JSON.stringify(parseAccounts));
-  console.log(localStorage.getItem('accounts'));
 }

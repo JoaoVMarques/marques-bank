@@ -4,17 +4,12 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event'
 import React from 'react';
 import App from '../../src/App';
-import testAccount from '../mock/accountsMock';
+import { VALID_ACCOUNT, testAccount } from '../mock/accountsMock';
+import { LOCALSTORAGE_INITIAL_STAGE, LOCALSTORAGE_WITH_TESTACCOUNT_VALUE } from '../mock/localstorageMock';
 
 function mockLocalStorage() {
   localStorage.clear();
   localStorage.setItem('accounts', JSON.stringify([testAccount]));
-}
-
-const VALID_ACCOUNT = {
-  username: 'usernameTest',
-  password: 'passwordT',
-  email: 'emailTest@email.com'
 }
 
 async function enterInRegisterPage(screen: RenderResult) {
@@ -72,5 +67,38 @@ describe('Login screen', () => {
 
     await userEvent.click(loginButton)
     expect(screen.getByText('Registro')).toBeInTheDocument();
+  })
+
+  test('Account should apear in localstorage', async () => {
+    const screen = render(<App />);
+    await enterInRegisterPage(screen)
+    
+    const usernameForm = screen.getByRole('textbox', {
+      name: /nome de usuario/i
+    })
+    const emailForm = screen.getByRole('textbox', {
+      name: /endereço de email/i
+    })
+    const passwordForm = screen.getByLabelText(/senha/i)
+    const termsForm = screen.getByRole('checkbox', {
+      name: /concordo com os termos de uso/i
+    })
+
+    let accountslocalStorage = JSON.parse(localStorage.getItem('accounts')!)
+    expect(accountslocalStorage).toStrictEqual(LOCALSTORAGE_INITIAL_STAGE)
+
+    await userEvent.type(usernameForm, VALID_ACCOUNT.username);
+    await userEvent.type(emailForm, VALID_ACCOUNT.email);
+    await userEvent.type(passwordForm, VALID_ACCOUNT.password);
+    await userEvent.click(termsForm)
+
+    const loginButton = screen.getByRole('button', {
+      name: /login/i
+    })
+
+    await userEvent.click(loginButton)
+    
+    accountslocalStorage = JSON.parse(localStorage.getItem('accounts')!)
+    expect(accountslocalStorage).toStrictEqual(LOCALSTORAGE_WITH_TESTACCOUNT_VALUE)
   })
 });

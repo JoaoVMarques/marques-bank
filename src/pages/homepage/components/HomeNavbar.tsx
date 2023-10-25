@@ -2,6 +2,7 @@ import {
   Navbar, Container, Nav, Offcanvas,
 } from 'react-bootstrap';
 import NavbarLogo from './NavbarLogo.tsx';
+import personIcon from '../../../imgs/svgs/person-circle.svg';
 
 function HomeNavbar() {
   return (
@@ -26,6 +27,12 @@ function HomeNavbar() {
             <Nav.Link href="#placeholder1">placeholder</Nav.Link>
             <Nav.Link href="#placeholder2">placeholder</Nav.Link>
           </Nav>
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>
+              <img className='me-2' src={personIcon} width={30} alt="icone usuario" />
+              <span className='align-middle'>USERNAME</span>
+            </Navbar.Text>
+          </Navbar.Collapse>
         </Offcanvas.Body>
       </Navbar.Offcanvas>
     </Container>

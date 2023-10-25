@@ -1,19 +1,21 @@
 import {
   Col, Container, Row, Table,
 } from 'react-bootstrap';
+import { ITransactions } from '../../../../localstorage/interfaces/accountInfo';
 
-function createTable(user : IRecent) {
+function createTable(data: ITransactions) {
   return (
-  <tr key={user.id}>
-    <td>{user.date}</td>
-    <td>{user.user}</td>
-    <td>{user.type}</td>
-    <td>{user.quantity}</td>
-    <td>{user.status}</td>
+  <tr key={data.id}>
+    <td>{data.date}</td>
+    <td>{data.receiver}</td>
+    <td>{data.type}</td>
+    <td>{data.quantity}</td>
+    <td>{data.status}</td>
   </tr>);
 }
 
-function RecentPanel() {
+function RecentPanel(props: { transactions: ITransactions[] }) {
+  const { transactions } = props;
   return (
     <Container>
       <Row>
@@ -33,7 +35,7 @@ function RecentPanel() {
             </tr>
           </thead>
           <tbody>
-            { recentUser1.map((user) => createTable(user)) }
+            {transactions.map((data) => createTable(data))}
           </tbody>
         </Table>
       </Row>

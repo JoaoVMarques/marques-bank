@@ -2,9 +2,12 @@ import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import validateLogin from '../../../localstorage/loginAccount.ts';
 import PasswordModal from './PasswordModal.tsx';
+import UserDataContext from '../../../hooks/contexts/userDataContext.ts';
+import { IDataContext } from '../../../hooks/interfaces/dataContext.ts';
+import { defaultAccountInfo } from '../../../localstorage/data/defaultAccount.ts';
 
 const schema = yup.object().shape({
   email: yup.string().required(),
@@ -12,6 +15,7 @@ const schema = yup.object().shape({
 });
 
 function LoginForm() {
+  const { setUser } = useContext(UserDataContext) as IDataContext;
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const initialValues = {
@@ -21,13 +25,18 @@ function LoginForm() {
 
   const handleClose = () => setShow(false);
 
+  function saveAccountAndRedirect() {
+    setUser(defaultAccountInfo)
+    navigate('/marques');
+  }
+
   return (
     <Formik
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={(account, { resetForm }) => {
         if (validateLogin(account)) {
-          navigate('/marques');
+          saveAccountAndRedirect();
         } else {
           setShow(true);
           resetForm({

@@ -32,7 +32,8 @@
           "tabWidth": 2,
           "ignoreComments": true, //"comments": 80
           "ignoreUrls": true,
-          "ignoreTemplateLiterals": true
+          "ignoreTemplateLiterals": true,
+          "argsIgnorePattern": "^_"
         }
       ]
     }

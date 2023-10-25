@@ -1,6 +1,6 @@
 // A parte de encontrar a conta deveria ser feito no back-end
 // porém por ser um projeto de testes e não vai ser utilizado back-end no momento
-import { defaultAccount } from './defaultAccount.ts';
+import { defaultAccount } from './data/defaultAccount.ts';
 import { IAccount } from './interfaces/account.ts';
 
 function searchAccount(credentials: IAccount, localStorageAccount: string) {

@@ -1,5 +1,5 @@
-import { IAccount } from './interfaces/account.ts';
-import { IAccountInfo } from './interfaces/accountInfo.ts';
+import { IAccount } from '../interfaces/account.ts';
+import { IAccountInfo } from '../interfaces/accountInfo.ts';
 
 export const defaultAccount: IAccount = {
   email: 'teste@email.com',

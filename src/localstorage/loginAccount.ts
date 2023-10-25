@@ -1,11 +1,7 @@
 // A parte de encontrar a conta deveria ser feito no back-end
 // porém por ser um projeto de testes e não vai ser utilizado back-end no momento
+import { defaultAccount } from './defaultAccount.ts';
 import { IAccount } from './interfaces/account.ts';
-
-const defaultAccount: IAccount = {
-  email: 'teste@email.com',
-  password: '1234',
-};
 
 function searchAccount(credentials: IAccount, localStorageAccount: string) {
   const accounts: Array<IAccount> = JSON.parse(localStorageAccount);

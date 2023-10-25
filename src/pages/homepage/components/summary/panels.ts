@@ -14,7 +14,6 @@ export const totalMoney: IPanel = {
     alt: 'icone de carteira de dinheiro',
   },
   title: 'Saldo disponível',
-  value: 1000,
 };
 
 export const deposit: IPanel = {
@@ -24,7 +23,6 @@ export const deposit: IPanel = {
     alt: 'seta para baixo',
   },
   title: 'Dinheiro depositado',
-  value: 500,
 };
 
 export const withdrawn: IPanel = {
@@ -34,7 +32,6 @@ export const withdrawn: IPanel = {
     alt: 'seta para cima',
   },
   title: 'Dinheiro retirado',
-  value: 200,
 };
 
 export const earnedMoney: IPanel = {
@@ -44,5 +41,4 @@ export const earnedMoney: IPanel = {
     alt: 'cofrinho de dinheiro em formato de porquinho',
   },
   title: 'Rendimentos obtidos',
-  value: 50,
 };

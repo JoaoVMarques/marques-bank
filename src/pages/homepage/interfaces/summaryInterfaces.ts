@@ -7,5 +7,4 @@ interface Iicon {
 export interface IPanel {
   icon: Iicon;
   title: string;
-  value: number;
 }

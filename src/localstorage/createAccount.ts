@@ -29,19 +29,21 @@ function createAccountInfo(account: IRegisterAcount) {
   const parseAccounts = JSON.parse(localstorageInfo);
   parseAccounts.push(accountInfo);
   localStorage.setItem('info', JSON.stringify(parseAccounts));
+  return accountInfo;
 }
 
 export function insertAccount(account: IRegisterAcount) {
   const accounts = localStorage.getItem('accounts');
   const formattedAccount = formatAccount(account);
-  createAccountInfo(account);
+  const accountInfo = createAccountInfo(account);
 
   if (!accounts) {
     localStorage.setItem('accounts', JSON.stringify([formattedAccount]));
-    return;
+    return accountInfo;
   }
 
   const parseAccounts = JSON.parse(accounts);
   parseAccounts.push(account);
   localStorage.setItem('accounts', JSON.stringify(parseAccounts));
+  return accountInfo;
 }

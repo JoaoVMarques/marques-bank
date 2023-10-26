@@ -11,6 +11,7 @@ const UserDataProvider = (props : any) => {
 
   useEffect(() => {
     // Atualização do user data (colocar no localstorage)
+    console.log(userData)
   })
 
   const { children } = props; 

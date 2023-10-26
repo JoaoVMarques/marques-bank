@@ -2,8 +2,12 @@ import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
-import { insertAccount, formatAccount } from '../../../localstorage/createAccount.ts';
+import { insertAccount } from '../../../localstorage/createAccount.ts';
 import validateRegister from '../../../localstorage/validateRegister.ts';
+import { IRegisterAcount } from '../../../localstorage/interfaces/account.ts';
+import { useContext } from 'react';
+import UserDataContext from '../../../hooks/contexts/userDataContext.ts';
+import { IDataContext } from '../../../hooks/interfaces/dataContext.ts';
 
 const schema = yup.object().shape({
   username: yup.string().required(),
@@ -13,6 +17,7 @@ const schema = yup.object().shape({
 });
 
 function RegisterForm() {
+  const { setUser } = useContext(UserDataContext) as IDataContext;
   const navigate = useNavigate();
   const initialValues = {
     username: '',
@@ -20,6 +25,14 @@ function RegisterForm() {
     password: '',
     terms: false,
   };
+
+  function saveAndRedirect(account: IRegisterAcount) {
+    navigate('/marques');
+    const accountInfo = insertAccount(account);
+    setUser(accountInfo!)
+    return;
+  }
+  
   return (
     <Formik
       validationSchema={schema}
@@ -27,9 +40,7 @@ function RegisterForm() {
       onSubmit={(account) => {
         const validAccount = validateRegister(account);
         if (validAccount) {
-          navigate('/marques');
-          insertAccount(account);
-          return;
+          saveAndRedirect(account)
         }
         console.log(validAccount);
       }}

@@ -7,7 +7,7 @@ import validateLogin from '../../../localstorage/loginAccount.ts';
 import PasswordModal from './PasswordModal.tsx';
 import UserDataContext from '../../../hooks/contexts/userDataContext.ts';
 import { IDataContext } from '../../../hooks/interfaces/dataContext.ts';
-import { defaultAccountInfo } from '../../../localstorage/data/defaultAccount.ts';
+import { IAccountInfo } from '../../../localstorage/interfaces/accountInfo.ts';
 
 const schema = yup.object().shape({
   email: yup.string().required(),
@@ -25,8 +25,8 @@ function LoginForm() {
 
   const handleClose = () => setShow(false);
 
-  function saveAccountAndRedirect() {
-    setUser(defaultAccountInfo)
+  function saveAccountAndRedirect(accountInfo: IAccountInfo) {
+    setUser(accountInfo)
     navigate('/marques');
   }
 
@@ -35,17 +35,14 @@ function LoginForm() {
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={(account, { resetForm }) => {
-        if (validateLogin(account)) {
-          saveAccountAndRedirect();
-        } else {
-          setShow(true);
-          resetForm({
-            values: {
-              email: account.email,
-              password: '',
-            },
-          });
-        }
+        validateLogin(account, saveAccountAndRedirect)
+        setShow(true);
+        resetForm({
+          values: {
+            email: account.email,
+            password: '',
+          },
+        });
       }}
       validateOnChange={false}
     >

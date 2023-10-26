@@ -18,11 +18,10 @@ function searchAccount(credentials: IAccount, localStorageAccount: string) {
 
 function saveLogin(accountEmail: string) {
   const accountInfo = findAccountInfo(accountEmail)
-  if (accountInfo) {
-    
+  if(!accountInfo) {
+    throw new Error("account dont have Info");
   }
-  return accountInfo!
-  console.log('É preciso criar uma account info para essa conta')
+  return accountInfo
 }
 
 export default function validateLogin(account: IAccount, saveAccountAndRedirect: (accountInfo: IAccountInfo) => void) {

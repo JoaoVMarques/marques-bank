@@ -8,7 +8,7 @@ function verifyEmailExist(accountEmail: string) {
     const accountBoolean = !!accountFind;
     return !accountBoolean;
   }
-  return false;
+  return true;
 }
 
 export default function validateRegister(account: IRegisterAcount) {

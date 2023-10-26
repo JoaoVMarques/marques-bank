@@ -27,12 +27,11 @@ function RegisterForm() {
       onSubmit={(account) => {
         const validAccount = validateRegister(account);
         if (validAccount) {
-          const formatedAccount = formatAccount(account);
           navigate('/marques');
-          insertAccount(formatedAccount);
+          insertAccount(account);
           return;
         }
-        console.log('invalido');
+        console.log(validAccount);
       }}
       validateOnChange={false}
     >

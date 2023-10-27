@@ -6,7 +6,7 @@ function Slogan() {
       <Row>
         <Col>
           <h4 className='text-center mb-0 color-purple'>Tecnologia
-          <span className='text-body'> e </span>
+            <span className='text-body'> e </span>
           Velocidade</h4>
         </Col>
       </Row>

@@ -18,10 +18,10 @@ function createAccountInfo(account: IRegisterAcount) {
     },
     transactions: [
 
-    ]
-  }
+    ],
+  };
 
-  const localstorageInfo = localStorage.getItem('info')
+  const localstorageInfo = localStorage.getItem('info');
   if(!localstorageInfo) {
     localStorage.setItem('info', JSON.stringify([accountInfo]));
     return;
@@ -37,7 +37,7 @@ export function insertAccount(account: IRegisterAcount) {
   const formattedAccount = formatAccount(account);
   const accountInfo = createAccountInfo(account);
 
-  if (!accounts) {
+  if(!accounts) {
     localStorage.setItem('accounts', JSON.stringify([formattedAccount]));
     return accountInfo;
   }

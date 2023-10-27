@@ -2,7 +2,7 @@ import { IRegisterAcount, IAccount } from './interfaces/account.ts';
 
 function verifyEmailExist(accountEmail: string) {
   const localstorageAccount = localStorage.getItem('accounts');
-  if (localstorageAccount) {
+  if(localstorageAccount) {
     const accounts: Array<IAccount> = JSON.parse(localstorageAccount);
     const accountFind = accounts.find(({ email }) => accountEmail === email);
     const accountBoolean = !!accountFind;

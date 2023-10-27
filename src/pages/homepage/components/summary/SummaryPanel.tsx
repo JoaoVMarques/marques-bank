@@ -15,7 +15,8 @@ function SummaryPanel(props: { panel: IPanel }) {
         </Row>
         <Row>
           <Col>
-            <h4>R$ {panel.value}</h4>
+            {/* Remover esse .value depois e substituir pelo valor do usuario */}
+            <h4>R$ {panel.value }</h4>
           </Col>
         </Row>
       </Container>

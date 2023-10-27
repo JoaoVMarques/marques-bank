@@ -1,17 +1,17 @@
 import {
   Col, Container, Row, Table,
 } from 'react-bootstrap';
-import { ITransactions } from '../../../../localstorage/interfaces/accountInfo';
+import { ITransactions } from '../../../../localstorage/interfaces/accountInfo.ts';
 
 function createTable(data: ITransactions) {
   return (
-  <tr key={data.id}>
-    <td>{data.date}</td>
-    <td>{data.receiver}</td>
-    <td>{data.type}</td>
-    <td>{data.quantity}</td>
-    <td>{data.status}</td>
-  </tr>);
+    <tr key={data.id}>
+      <td>{data.date}</td>
+      <td>{data.receiver}</td>
+      <td>{data.type}</td>
+      <td>{data.quantity}</td>
+      <td>{data.status}</td>
+    </tr>);
 }
 
 function RecentPanel(props: { transactions: ITransactions[] }) {

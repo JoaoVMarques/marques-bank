@@ -26,11 +26,18 @@
       "no-console": "off",
       "consistent-return": "off",
       // "argsIgnorePattern": "^_",
-      // "semi": 2,
-      // "indent": [
-      //   "error",
-      //   2
-      // ],
+      "keyword-spacing": [
+        "error", { "overrides": {
+          "if": { 
+            "after": false 
+          }
+        }
+      }],
+      "semi": 2,
+      "indent": [
+        "error",
+        2
+      ],
       "max-len": [
         "error",
         {

@@ -2,9 +2,8 @@
 // porém por ser um projeto de testes não vai ser utilizado back-end no momento
 import { defaultAccount, defaultAccountInfo } from './data/defaultAccount.ts';
 import { IAccount } from './interfaces/account.ts';
-import { findAccountInfo } from './findAccountInfo.ts';
+import findAccountInfo from './findAccountInfo.ts';
 import { IAccountInfo } from './interfaces/accountInfo.ts';
-
 
 function searchAccount(credentials: IAccount, localStorageAccount: string) {
   const accounts: Array<IAccount> = JSON.parse(localStorageAccount);
@@ -17,21 +16,24 @@ function searchAccount(credentials: IAccount, localStorageAccount: string) {
 }
 
 function saveLogin(accountEmail: string) {
-  const accountInfo = findAccountInfo(accountEmail)
+  const accountInfo = findAccountInfo(accountEmail);
   if(!accountInfo) {
-    throw new Error("account dont have Info");
+    throw new Error('account dont have Info');
   }
-  return accountInfo
+  return accountInfo;
 }
 
-export default function validateLogin(account: IAccount, saveAccountAndRedirect: (accountInfo: IAccountInfo) => void) {
+function validateLogin(
+  account: IAccount,
+  saveAccountAndRedirect: (accountInfo: IAccountInfo) => void,
+) {
   let accounts = localStorage.getItem('accounts');
-  if (!accounts) {
+  if(!accounts) {
     localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
-    localStorage.setItem('info',  JSON.stringify([defaultAccountInfo]))
+    localStorage.setItem('info', JSON.stringify([defaultAccountInfo]));
     accounts = localStorage.getItem('accounts');
   }
-  
+
   const accountExists = searchAccount(account, accounts!);
   if(accountExists) {
     const accountInfo = saveLogin(account.email);
@@ -39,3 +41,4 @@ export default function validateLogin(account: IAccount, saveAccountAndRedirect:
   }
 }
 
+export default validateLogin;

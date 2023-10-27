@@ -10,7 +10,7 @@ function HomePage() {
   const { getUserData } = useContext(UserDataContext) as IDataContext;
   const navigate = useNavigate();
   const transactins = getUserData().transactions;
-  if (getUserData() == null) {
+  if(getUserData() == null) {
     navigate('login');
   }
 

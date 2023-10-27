@@ -28,9 +28,9 @@ function LoginScreen() {
             <div className='separator'>OU</div>
           </div>
           <Button
-          variant='secondary'
-          onClick={redirectToRegister}
-          className='w-100'>Criar conta</Button>
+            variant='secondary'
+            onClick={redirectToRegister}
+            className='w-100'>Criar conta</Button>
         </Col>
       </Row>
     </Container>

@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { IPanel } from '../../interfaces/summaryInterfaces.ts';
 import wallet from '../../../../imgs/svgs/wallet.svg';
 import arrowDown from '../../../../imgs/svgs/arrow-down.svg';

@@ -26,7 +26,7 @@ function LoginForm() {
   const handleClose = () => setShow(false);
 
   function saveAccountAndRedirect(accountInfo: IAccountInfo) {
-    setUser(accountInfo)
+    setUser(accountInfo);
     navigate('/marques');
   }
 
@@ -35,7 +35,7 @@ function LoginForm() {
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={(account, { resetForm }) => {
-        validateLogin(account, saveAccountAndRedirect)
+        validateLogin(account, saveAccountAndRedirect);
         setShow(true);
         resetForm({
           values: {

@@ -2,10 +2,10 @@ import { Formik } from 'formik';
 import { Form, Button } from 'react-bootstrap';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
 import { insertAccount } from '../../../localstorage/createAccount.ts';
 import validateRegister from '../../../localstorage/validateRegister.ts';
 import { IRegisterAcount } from '../../../localstorage/interfaces/account.ts';
-import { useContext } from 'react';
 import UserDataContext from '../../../hooks/contexts/userDataContext.ts';
 import { IDataContext } from '../../../hooks/interfaces/dataContext.ts';
 
@@ -29,18 +29,17 @@ function RegisterForm() {
   function saveAndRedirect(account: IRegisterAcount) {
     navigate('/marques');
     const accountInfo = insertAccount(account);
-    setUser(accountInfo!)
-    return;
+    setUser(accountInfo!);
   }
-  
+
   return (
     <Formik
       validationSchema={schema}
       initialValues={initialValues}
       onSubmit={(account) => {
         const validAccount = validateRegister(account);
-        if (validAccount) {
-          saveAndRedirect(account)
+        if(validAccount) {
+          saveAndRedirect(account);
         }
         console.log(validAccount);
       }}

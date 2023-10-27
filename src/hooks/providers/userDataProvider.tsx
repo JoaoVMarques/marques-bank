@@ -1,23 +1,29 @@
-import { useEffect, useState } from 'react';
+import {
+  useEffect, useState, FunctionComponent, ReactNode,
+} from 'react';
 import UserDataContext from '../contexts/userDataContext.ts';
 import { IAccountInfo } from '../../localstorage/interfaces/accountInfo.ts';
-import { findAccountInfo } from '../../localstorage/findAccountInfo.ts';
+import findAccountInfo from '../../localstorage/findAccountInfo.ts';
 
-const UserDataProvider = (props : any) => {
+export interface BaseLayoutProps {
+  children?: ReactNode;
+}
+
+const UserDataProvider: FunctionComponent<BaseLayoutProps> = (props) => {
   const [userData, setUserData] = useState<IAccountInfo | null>(null);
 
   function setUser(data : IAccountInfo) {
     setUserData(data);
     const logged = localStorage.getItem('login');
 
-    if (!logged) {
+    if(!logged) {
       const login = { email: data.email };
       localStorage.setItem('login', JSON.stringify(login));
     }
   }
 
   function getUserData() {
-    if (!userData) {
+    if(!userData) {
       const logged = localStorage.getItem('login');
       const parseLogin = JSON.parse(logged!);
       const accountInfo = findAccountInfo(parseLogin.email);

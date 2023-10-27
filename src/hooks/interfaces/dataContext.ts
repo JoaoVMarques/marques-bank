@@ -1,4 +1,4 @@
-import { IAccountInfo } from "../../localstorage/interfaces/accountInfo";
+import { IAccountInfo } from '../../localstorage/interfaces/accountInfo.ts';
 
 export interface IDataContext {
   getUserData: () => IAccountInfo

@@ -14,12 +14,8 @@ const UserDataProvider: FunctionComponent<BaseLayoutProps> = (props) => {
 
   function setUser(data : IAccountInfo) {
     setUserData(data);
-    const logged = localStorage.getItem('login');
-
-    if(!logged) {
-      const login = { email: data.email };
-      localStorage.setItem('login', JSON.stringify(login));
-    }
+    const login = { email: data.email };
+    localStorage.setItem('login', JSON.stringify(login));
   }
 
   function getUserData() {

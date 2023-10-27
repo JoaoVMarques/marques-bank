@@ -25,6 +25,12 @@
     "rules": {
       "no-console": "off",
       "consistent-return": "off",
+      // "argsIgnorePattern": "^_",
+      // "semi": 2,
+      // "indent": [
+      //   "error",
+      //   2
+      // ],
       "max-len": [
         "error",
         {
@@ -32,8 +38,7 @@
           "tabWidth": 2,
           "ignoreComments": true, //"comments": 80
           "ignoreUrls": true,
-          "ignoreTemplateLiterals": true,
-          "argsIgnorePattern": "^_"
+          "ignoreTemplateLiterals": true
         }
       ]
     }

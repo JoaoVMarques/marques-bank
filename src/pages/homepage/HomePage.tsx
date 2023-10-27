@@ -1,16 +1,17 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import HomeNavbar from './components/HomeNavbar.tsx';
 import RecentPanel from './components/recent/RecentPanel.tsx';
 import Summary from './components/summary/Summary.tsx';
 import { IDataContext } from '../../hooks/interfaces/dataContext.ts';
 import UserDataContext from '../../hooks/contexts/userDataContext.ts';
-import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
-  const { userData } = useContext(UserDataContext) as IDataContext;
+  const { getUserData } = useContext(UserDataContext) as IDataContext;
   const navigate = useNavigate();
-  if(userData == null) {
-    navigate('login')
+  const transactins = getUserData().transactions;
+  if (getUserData() == null) {
+    navigate('login');
   }
 
   return (
@@ -18,7 +19,7 @@ function HomePage() {
       <HomeNavbar />
       <hr className='navbarLine mb-4  ' />
       <Summary />
-      <RecentPanel transactions={userData!.transactions}  />
+      <RecentPanel transactions={transactins} />
     </>
   );
 }

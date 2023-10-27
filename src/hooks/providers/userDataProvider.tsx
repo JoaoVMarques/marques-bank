@@ -1,30 +1,47 @@
-import { useEffect, useState } from "react"
-import UserDataContext from '../contexts/userDataContext.ts'
-import { IAccountInfo } from "../../localstorage/interfaces/accountInfo.ts";
+import { useEffect, useState } from 'react';
+import UserDataContext from '../contexts/userDataContext.ts';
+import { IAccountInfo } from '../../localstorage/interfaces/accountInfo.ts';
+import { findAccountInfo } from '../../localstorage/findAccountInfo.ts';
 
 const UserDataProvider = (props : any) => {
-  const [ userData, setUserData ] = useState<IAccountInfo | null>(null);
-  
+  const [userData, setUserData] = useState<IAccountInfo | null>(null);
+
   function setUser(data : IAccountInfo) {
-    setUserData(data)
+    setUserData(data);
+    const logged = localStorage.getItem('login');
+
+    if (!logged) {
+      const login = { email: data.email };
+      localStorage.setItem('login', JSON.stringify(login));
+    }
+  }
+
+  function getUserData() {
+    if (!userData) {
+      const logged = localStorage.getItem('login');
+      const parseLogin = JSON.parse(logged!);
+      const accountInfo = findAccountInfo(parseLogin.email);
+      setUserData(accountInfo!);
+      return accountInfo!;
+    }
+    return userData;
   }
 
   useEffect(() => {
-    // Atualização do user data (colocar no localstorage)
-    console.log(userData)
-  })
+    console.log(userData);
+  }, [userData]);
 
-  const { children } = props; 
+  const { children } = props;
 
   const contextValue = {
-    userData,
-    setUser
+    getUserData,
+    setUser,
   };
-  return(
+  return (
     <UserDataContext.Provider value={ contextValue }>
       {children}
     </UserDataContext.Provider>
-  )
-}
+  );
+};
 
-export default UserDataProvider
+export default UserDataProvider;

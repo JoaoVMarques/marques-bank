@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event'
 import React from 'react';
 import App from '../../src/App';
-import { testAccount } from '../mock/accountsMock';
+import { testAccount, testAccountInfo } from '../mock/accountsMock';
 
 const HomePageText = 'Marques'
 const account = {
@@ -15,6 +15,7 @@ const account = {
 const mockLocalStorage = () => {
   localStorage.clear();
   localStorage.setItem('accounts', JSON.stringify([testAccount]));
+  localStorage.setItem('info', JSON.stringify([testAccountInfo]))
 }
 
 describe('Login screen', () => {

@@ -4,12 +4,13 @@ import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event'
 import React from 'react';
 import App from '../../src/App';
-import { VALID_ACCOUNT, testAccount } from '../mock/accountsMock';
+import { VALID_ACCOUNT, testAccount, testAccountInfo } from '../mock/accountsMock';
 import { LOCALSTORAGE_INITIAL_STAGE, LOCALSTORAGE_WITH_TESTACCOUNT_VALUE } from '../mock/localstorageMock';
 
 function mockLocalStorage() {
   localStorage.clear();
   localStorage.setItem('accounts', JSON.stringify([testAccount]));
+  localStorage.setItem('info', JSON.stringify([testAccountInfo]))
 }
 
 async function enterInRegisterPage(screen: RenderResult) {

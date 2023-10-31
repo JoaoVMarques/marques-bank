@@ -43,7 +43,7 @@ export function insertAccount(account: IRegisterAcount) {
   }
 
   const parseAccounts = JSON.parse(accounts);
-  parseAccounts.push(account);
+  parseAccounts.push(formattedAccount);
   localStorage.setItem('accounts', JSON.stringify(parseAccounts));
   return accountInfo;
 }

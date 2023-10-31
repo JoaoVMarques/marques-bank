@@ -30,7 +30,7 @@ const UserDataProvider: FunctionComponent<BaseLayoutProps> = (props) => {
   }
 
   useEffect(() => {
-    console.log(userData);
+
   }, [userData]);
 
   const { children } = props;

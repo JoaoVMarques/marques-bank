@@ -9,17 +9,17 @@ import UserDataContext from '../../hooks/contexts/userDataContext.ts';
 function HomePage() {
   const { getUserData } = useContext(UserDataContext) as IDataContext;
   const navigate = useNavigate();
-  const transactins = getUserData().transactions;
+  const userData = getUserData();
   if(getUserData() == null) {
     navigate('login');
   }
 
   return (
     <>
-      <HomeNavbar />
+      <HomeNavbar username={userData.username} />
       <hr className='navbarLine mb-4  ' />
       <Summary />
-      <RecentPanel transactions={transactins} />
+      <RecentPanel transactions={userData.transactions} />
     </>
   );
 }

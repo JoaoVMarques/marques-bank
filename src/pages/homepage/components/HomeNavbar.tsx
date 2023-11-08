@@ -4,7 +4,8 @@ import {
 import NavbarLogo from './NavbarLogo.tsx';
 import personIcon from '../../../imgs/svgs/person-circle.svg';
 
-function HomeNavbar() {
+function HomeNavbar(props: { username: string }) {
+  const { username } = props;
   return (
     <Navbar expand="sm" className='pb-0'>
       <Container>
@@ -30,7 +31,7 @@ function HomeNavbar() {
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
                 <img className='me-2' src={personIcon} width={30} alt="icone usuario" />
-                <span className='align-middle'>USERNAME</span>
+                <span className='align-middle'>{username}</span>
               </Navbar.Text>
             </Navbar.Collapse>
           </Offcanvas.Body>

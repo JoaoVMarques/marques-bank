@@ -7,4 +7,5 @@ interface Iicon {
 export interface IPanel {
   icon: Iicon;
   title: string;
+  balanceType: string;
 }

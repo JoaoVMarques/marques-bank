@@ -1,20 +1,21 @@
 import { Container, Row } from 'react-bootstrap';
 import SummaryPanel from './SummaryPanel.tsx';
-import {
-  totalMoney, deposit, withdrawn, earnedMoney,
-} from './panels.ts';
+import panels from './panels.ts';
+import { IBalance } from '../../../../localstorage/interfaces/accountInfo.ts';
 
-function Summary() {
+// otimizar essa tela usando loops
+
+function Summary(props: { balance: IBalance }) {
+  const { balance } = props;
   return (
     <Container className='mb-3'>
       <Row>
         <h5 className='mb-3'>Sumário</h5>
       </Row>
       <Row>
-        <SummaryPanel panel={totalMoney} />
-        <SummaryPanel panel={deposit} />
-        <SummaryPanel panel={withdrawn} />
-        <SummaryPanel panel={earnedMoney} />
+        { panels.map((panel) => (
+          <SummaryPanel key={panel.title} balance={balance} panel={panel} />
+        )) }
       </Row>
     </Container>
   );

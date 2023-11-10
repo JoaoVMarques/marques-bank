@@ -1,7 +1,8 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { IPanel } from '../../interfaces/summaryInterfaces.ts';
+import { IBalance } from '../../../../localstorage/interfaces/accountInfo.ts';
 
-function SummaryPanel(props: { panel: IPanel }) {
+function SummaryPanel(props: { panel: IPanel, balance: IBalance }) {
   const { panel } = props;
   const { icon } = panel;
   return (

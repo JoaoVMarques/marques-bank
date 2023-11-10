@@ -6,38 +6,46 @@ import piggyBank from '../../../../imgs/svgs/piggy-bank.svg';
 
 // Depois é preciso deixar dinamico a parte dos valores.
 
-export const totalMoney: IPanel = {
-  icon: {
-    src: wallet,
-    size: 30,
-    alt: 'icone de carteira de dinheiro',
+const panels: IPanel[] = [
+  {
+    icon: {
+      src: wallet,
+      size: 30,
+      alt: 'icone de carteira de dinheiro',
+    },
+    title: 'Saldo disponível',
+    balanceType: 'available',
   },
-  title: 'Saldo disponível',
-};
 
-export const deposit: IPanel = {
-  icon: {
-    src: arrowDown,
-    size: 30,
-    alt: 'seta para baixo',
+  {
+    icon: {
+      src: arrowDown,
+      size: 30,
+      alt: 'seta para baixo',
+    },
+    title: 'Dinheiro depositado',
+    balanceType: 'deposited',
   },
-  title: 'Dinheiro depositado',
-};
 
-export const withdrawn: IPanel = {
-  icon: {
-    src: arrowUp,
-    size: 30,
-    alt: 'seta para cima',
+  {
+    icon: {
+      src: arrowUp,
+      size: 30,
+      alt: 'seta para cima',
+    },
+    title: 'Dinheiro retirado',
+    balanceType: 'withdrawn',
   },
-  title: 'Dinheiro retirado',
-};
 
-export const earnedMoney: IPanel = {
-  icon: {
-    src: piggyBank,
-    size: 30,
-    alt: 'cofrinho de dinheiro em formato de porquinho',
+  {
+    icon: {
+      src: piggyBank,
+      size: 30,
+      alt: 'cofrinho de dinheiro em formato de porquinho',
+    },
+    title: 'Rendimentos obtidos',
+    balanceType: 'income',
   },
-  title: 'Rendimentos obtidos',
-};
+];
+
+export default panels;

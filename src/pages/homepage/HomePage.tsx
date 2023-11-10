@@ -18,7 +18,7 @@ function HomePage() {
     <>
       <HomeNavbar username={userData.username} />
       <hr className='navbarLine mb-4  ' />
-      <Summary />
+      <Summary balance={userData.balance} />
       <RecentPanel transactions={userData.transactions} />
     </>
   );

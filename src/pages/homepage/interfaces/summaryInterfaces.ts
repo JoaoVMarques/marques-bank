@@ -1,3 +1,5 @@
+import { IBalance } from '../../../localstorage/interfaces/accountInfo.ts';
+
 interface Iicon {
   src: string;
   size: number;
@@ -7,5 +9,5 @@ interface Iicon {
 export interface IPanel {
   icon: Iicon;
   title: string;
-  balanceType: string;
+  balanceType: keyof IBalance;
 }

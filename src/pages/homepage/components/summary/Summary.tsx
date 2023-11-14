@@ -1,12 +1,12 @@
 import { Container, Row } from 'react-bootstrap';
 import SummaryPanel from './SummaryPanel.tsx';
 import panels from './panels.ts';
-import { IBalance } from '../../../../localstorage/interfaces/accountInfo.ts';
+import { IAccountInfo } from '../../../../localstorage/interfaces/accountInfo.ts';
 
 // otimizar essa tela usando loops
 
-function Summary(props: { balance: IBalance }) {
-  const { balance } = props;
+function Summary(props: { userData: IAccountInfo }) {
+  const { userData } = props;
   return (
     <Container className='mb-3'>
       <Row>
@@ -14,7 +14,7 @@ function Summary(props: { balance: IBalance }) {
       </Row>
       <Row>
         { panels.map((panel) => (
-          <SummaryPanel key={panel.title} balance={balance} panel={panel} />
+          <SummaryPanel key={panel.title} userData={userData} panel={panel} />
         )) }
       </Row>
     </Container>

@@ -1,9 +1,9 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { IPanel } from '../../interfaces/summaryInterfaces.ts';
-import { IBalance } from '../../../../localstorage/interfaces/accountInfo.ts';
+import { IAccountInfo } from '../../../../localstorage/interfaces/accountInfo.ts';
 
-function SummaryPanel(props: { panel: IPanel, balance: IBalance }) {
-  const { panel } = props;
+function SummaryPanel(props: { panel: IPanel, userData: IAccountInfo }) {
+  const { panel, userData } = props;
   const { icon } = panel;
   return (
     <Col lg={6} md={6} xl={3}>
@@ -17,7 +17,7 @@ function SummaryPanel(props: { panel: IPanel, balance: IBalance }) {
         <Row>
           <Col>
             {/* Remover esse .value depois e substituir pelo valor do usuario */}
-            <h4>R$ {panel.value }</h4>
+            <h4>R$ { userData.balance[panel.balanceType] }</h4>
           </Col>
         </Row>
       </Container>

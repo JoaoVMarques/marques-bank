@@ -16,7 +16,6 @@ function SummaryPanel(props: { panel: IPanel, userData: IAccountInfo }) {
         </Row>
         <Row>
           <Col>
-            {/* Remover esse .value depois e substituir pelo valor do usuario */}
             <h4>R$ { userData.balance[panel.balanceType] }</h4>
           </Col>
         </Row>

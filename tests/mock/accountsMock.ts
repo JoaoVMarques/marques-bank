@@ -5,14 +5,14 @@ export interface IAccount {
   password: string,
 }
 
-export const testAccount: IAccount = {
+export const account: IAccount = {
   email: 'correctEmail@email.com',
   password: '1234',
 };
 
 export const testAccountInfo: IAccountInfo = {
   email: 'correctEmail@email.com',
-  username: 'testeUsername',
+  username: 'testUsername',
   balance: {
     available: 1000,
     deposited: 700,

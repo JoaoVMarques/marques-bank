@@ -23,18 +23,22 @@ function saveLogin(accountEmail: string) {
   return accountInfo;
 }
 
+function createAccount() {
+  localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
+  localStorage.setItem('info', JSON.stringify([defaultAccountInfo]));
+  return localStorage.getItem('accounts')!;
+}
+
 function validateLogin(
   account: IAccount,
   saveAccountAndRedirect: (accountInfo: IAccountInfo) => void,
 ) {
   let accounts = localStorage.getItem('accounts');
   if(!accounts) {
-    localStorage.setItem('accounts', JSON.stringify([defaultAccount]));
-    localStorage.setItem('info', JSON.stringify([defaultAccountInfo]));
-    accounts = localStorage.getItem('accounts');
+    accounts = createAccount();
   }
 
-  const accountExists = searchAccount(account, accounts!);
+  const accountExists = searchAccount(account, accounts);
   if(accountExists) {
     const accountInfo = saveLogin(account.email);
     saveAccountAndRedirect(accountInfo);

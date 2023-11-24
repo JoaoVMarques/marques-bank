@@ -13,7 +13,7 @@ function HomePage() {
   useEffect(() => {
     setUserData(getUserData());
 
-    if(getUserData() == null) {
+    if(!getUserData()) {
       navigate('login');
     }
   }, []);

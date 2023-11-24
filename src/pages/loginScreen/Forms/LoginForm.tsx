@@ -6,7 +6,6 @@ import { useContext, useState } from 'react';
 import validateLogin from '../../../localstorage/loginAccount.ts';
 import PasswordModal from './PasswordModal.tsx';
 import UserDataContext from '../../../hooks/contexts/userDataContext.ts';
-import { IDataContext } from '../../../hooks/interfaces/dataContext.ts';
 import { IAccountInfo } from '../../../localstorage/interfaces/accountInfo.ts';
 
 const schema = yup.object().shape({
@@ -15,7 +14,7 @@ const schema = yup.object().shape({
 });
 
 function LoginForm() {
-  const { setUser } = useContext(UserDataContext) as IDataContext;
+  const { setUser } = useContext(UserDataContext);
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   const initialValues = {

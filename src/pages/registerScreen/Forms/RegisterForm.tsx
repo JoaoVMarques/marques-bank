@@ -7,7 +7,6 @@ import { insertAccount } from '../../../localstorage/createAccount.ts';
 import validateRegister from '../../../localstorage/validateRegister.ts';
 import { IRegisterAcount } from '../../../localstorage/interfaces/account.ts';
 import UserDataContext from '../../../hooks/contexts/userDataContext.ts';
-import { IDataContext } from '../../../hooks/interfaces/dataContext.ts';
 
 const schema = yup.object().shape({
   username: yup.string().required(),
@@ -17,7 +16,7 @@ const schema = yup.object().shape({
 });
 
 function RegisterForm() {
-  const { setUser } = useContext(UserDataContext) as IDataContext;
+  const { setUser } = useContext(UserDataContext);
   const navigate = useNavigate();
   const initialValues = {
     username: '',

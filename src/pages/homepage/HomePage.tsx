@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import HomeNavbar from './components/HomeNavbar.tsx';
 import RecentPanel from './components/recent/RecentPanel.tsx';
 import Summary from './components/summary/Summary.tsx';
-import { IDataContext } from '../../hooks/interfaces/dataContext.ts';
 import UserDataContext from '../../hooks/contexts/userDataContext.ts';
 import { IAccountInfo } from '../../localstorage/interfaces/accountInfo.ts';
 
 function HomePage() {
-  const { getUserData } = useContext(UserDataContext) as IDataContext;
+  const { getUserData } = useContext(UserDataContext);
   const [userData, setUserData] = useState<undefined | IAccountInfo>(undefined);
   const navigate = useNavigate();
   useEffect(() => {

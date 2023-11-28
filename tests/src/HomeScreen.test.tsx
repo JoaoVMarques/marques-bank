@@ -63,6 +63,6 @@ describe('Home screen', () => {
     expect(available).toBeInTheDocument()
     expect(deposited).toBeInTheDocument()
     expect(income).toBeInTheDocument()
-    expect(withdrawn).toBeInTheDocument()
+    expect(withdrawn ).toBeInTheDocument()
   }
 });

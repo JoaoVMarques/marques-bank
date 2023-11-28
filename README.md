@@ -39,4 +39,5 @@ Treinar meu front-end e colocar no meu portifólio
   - [React Router](https://reactrouter.com/en/main) Rotas
   - [Formik](https://formik.org/) Validar formulários
   - [Yup](https://www.npmjs.com/package/yup) schema da validação de formulário
+  - [coverage](https://vitest.dev/guide/coverage.html) testar cobertura de testes
 </details>

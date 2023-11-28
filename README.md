@@ -22,6 +22,23 @@ Treinar meu front-end e colocar no meu portifólio
 
 </details>
 
+## 📁 Utilizando o site
+<details>
+  <summary><strong>Login</strong></summary>
+  
+  Para fazer login no site utilize a conta:
+  ```
+  email: teste@email.com
+  senha: 1234
+  ```
+</details>
+
+<details>
+  <summary><strong>Criar conta</strong></summary>
+  
+  Caso queira criar uma conta é simples, basta apertar no botão de "Criar conta" ou adicionar a rota ```/register```
+</details>
+
 ## Parte Tecnica
 <details>
   <summary><strong>🛠️ Ferramentas Utilizadas</strong></summary><br />

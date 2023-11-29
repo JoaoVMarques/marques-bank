@@ -6,7 +6,7 @@ function SummaryPanel(props: { panel: IPanel, userData: IAccountInfo }) {
   const { panel, userData } = props;
   const { icon } = panel;
   return (
-    <Col lg={6} md={6} xl={3}>
+    <Col lg={6} md={6} xl={3} xs={11}>
       <Container className='panelBorder p-3 rounded bg-light mb-3'>
         <Row>
           <Col>

@@ -1,5 +1,7 @@
 # Marques-bank
 
+<img src="./public/imgs/marques-bank.png">
+
 ## Sobre
 É um site front-end que vai simular um site de banco futuramente talvez irei trabalhar na parte do back-end
 

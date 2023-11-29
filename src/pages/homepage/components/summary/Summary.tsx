@@ -3,8 +3,6 @@ import SummaryPanel from './SummaryPanel.tsx';
 import panels from './panels.ts';
 import { IAccountInfo } from '../../../../localstorage/interfaces/accountInfo.ts';
 
-// otimizar essa tela usando loops
-
 function Summary(props: { userData: IAccountInfo }) {
   const { userData } = props;
   return (

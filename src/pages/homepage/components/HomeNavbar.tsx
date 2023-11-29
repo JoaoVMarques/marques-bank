@@ -2,7 +2,7 @@ import {
   Navbar, Container, Nav, Offcanvas,
 } from 'react-bootstrap';
 import NavbarLogo from './NavbarLogo.tsx';
-import personIcon from '../../../imgs/svgs/person-circle.svg';
+import NavbarProfile from './NavbarProfile.tsx';
 
 function HomeNavbar(props: { username: string }) {
   const { username } = props;
@@ -21,10 +21,7 @@ function HomeNavbar(props: { username: string }) {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Navbar.Collapse className="justify-content-end order-2 mb-md-0 mb-sm-3">
-              <Navbar.Text className=''>
-                <img className='me-2' src={personIcon} width={30} alt="icone usuario" />
-                <span className='align-middle'>{username}</span>
-              </Navbar.Text>
+              <NavbarProfile username={username} />
             </Navbar.Collapse>
             <Nav className='d-lg-flex order-1'>
               <Nav.Link href="#home">Home</Nav.Link>

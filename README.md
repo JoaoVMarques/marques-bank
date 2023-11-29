@@ -1,6 +1,9 @@
 # Marques-bank
 
-<img src="./public/imgs/marques-bank.png">
+<p float="left">
+  <img src="./public/imgs/login.jpg" width="49%" />
+  <img src="./public/imgs/home.jpg" width="49%" /> 
+</p>
 
 ## Sobre
 É um site front-end que vai simular um site de banco futuramente talvez irei trabalhar na parte do back-end

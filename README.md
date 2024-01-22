@@ -44,6 +44,7 @@ Treinar meu front-end e colocar no meu portifólio
 ## Parte Tecnica
 <details>
   <summary><strong>🛠️ Ferramentas Utilizadas</strong></summary><br />
+  
   - [VsCode](https://code.visualstudio.com/) Editor de codigo fonte
   - [Vite](https://vitejs.dev/) Montar o projeto
   - [FreeLogo Design](https://pt.freelogodesign.org/) logos
@@ -51,6 +52,7 @@ Treinar meu front-end e colocar no meu portifólio
 
 <details>
   <summary><strong>🧰 Dependencias</strong></summary><br />
+  
   - Todas as dependencias estão dentro de ```dev-requirements.txt```
   - [React Bootstrap](https://react-bootstrap.netlify.app/) Estilização
   - [Vitest](https://vitest.dev/) Testes
@@ -59,4 +61,5 @@ Treinar meu front-end e colocar no meu portifólio
   - [Formik](https://formik.org/) Validar formulários
   - [Yup](https://www.npmjs.com/package/yup) schema da validação de formulário
   - [coverage](https://vitest.dev/guide/coverage.html) testar cobertura de testes
+
 </details>
